@@ -28,7 +28,7 @@ This project is coming from this repository:
 
 # Notes
 
-This is what I teach in my DevOps course with Nucamp: https://nucamp.co?referral=YGVUVG. If you want to learn more about this course, you can [check it out here](https://nucamp.co?referral=YGVUVG).
+This is what I teach in my DevOps course with Nucamp: https://nucamp.co?referral=YGVUVG. If you want to learn more about this course, you can [check it out here](https://nucamp.co?referral=YGVUVG). If you have more questions, you can always feel free to reach out to me and I will be happy to help you out.
 
 # Prerequisites
 
