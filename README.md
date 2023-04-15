@@ -71,7 +71,7 @@ This is what I teach in my DevOps course with Nucamp: https://nucamp.co?referral
 - Run the following command to stop the docker image: "docker-compose down"
 - Run the following command to stop the docker image in the background: "docker-compose down -v"
 
-# Running the project in AWS EC2 instance
+# Running the project in AWS EC2 instance & do some testing
 
 - Clone this repository
 - Run all the commands mentioned before in "Running the project"
@@ -95,7 +95,7 @@ This is what I teach in my DevOps course with Nucamp: https://nucamp.co?referral
 
 # Site notes:
 
-- If you would like to create any more resources in AWS, you now will be able to do so. And you will be able to use the ECR repository to copy the docker image to your AWS resources. As an example, you will be able to run an EKS instance within Helm and use the ECR image to add your application to the EKS instance. 
+- If you would like to create any more resources in AWS, you now will be able to do so. And you will be able to use the ECR repository to copy the docker image to your AWS resources. As an example, you will be able to run an EKS instance within Helm and use the ECR image to add your application to the EKS instance.
 
 # Go to the Terraform_aws_assignment repository
 
