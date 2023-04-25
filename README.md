@@ -1,35 +1,3 @@
-# Python, Django, PostgreSQL, Docker, Docker Compose, Nginx.
-
-I will be connecting my application to a AWS EC2 instance. I will be using the following technologies:
-
-- Python
-- Django
-- PostgreSQL
-- Docker
-- Docker Compose
-- Nginx
-- AWS EC2
-- AWS Relational Database Service (RDS)
-
-# Infrastructure
-This part will be set up with Terraform. I will be using Terraform to create the following:
-
-- VPC
-- Subnets
-- Internet Gateway
-- Route Table
-- Security Group
-- EC2 Instance
-- RDS Instance
-
-This project is coming from this repository:
-
-- https://github.com/hvaandres/terraform_aws_assignment
-
-# Notes
-
-This is what I teach in my DevOps course with Nucamp: https://nucamp.co?referral=YGVUVG. If you want to learn more about this course, you can [check it out here](https://nucamp.co?referral=YGVUVG). If you have more questions, you can always feel free to reach out to me and I will be happy to help you out.
-
 # Prerequisites
 
 - AWS Account
@@ -41,11 +9,48 @@ This is what I teach in my DevOps course with Nucamp: https://nucamp.co?referral
 - Django
 - PostgreSQL
 - Nginx
+- Kubectl (Kubernetes)
+- Helm (Kubernetes)
+- K9S (Kubernetes)
 
-# Getting Started
+## Project Overview 1.0
 
-- Clone this repository and this repository: https://github.com/hvaandres/terraform_aws_assignment
-- If you are using "Terraform_aws_assignment" repository, you will need to change the "main.tf" file to your own AWS account. You will need to change the "aws_access_key" and "aws_secret_key" to your own AWS account. OR you will need to change the "variables.tf" file to your own AWS account. You will need to change the "aws_access_key" and "aws_secret_key" to your own AWS account.
+I will be connecting my application to a AWS EC2 instance to test that my application is working 100% in cloud. I will be using the following technologies:
+
+    - Python
+    - Django
+    - PostgreSQL
+    - Docker
+    - Docker Compose
+    - Nginx
+    - AWS EC2
+    - AWS Relational Database Service (RDS)
+    - AWS EKS
+
+## Project Overview 2.0
+
+- I will be creating a docker image and I will uploaded to the AWS registry, and I will use the image to run the project into Kubernetes. I will be using the following technologies:
+    - Docker
+    - AWS Elastic Container Registry (ECR)
+    - Kubernetes
+    - Helm
+
+
+## Infrastructure
+This part will be set up with Terraform. I will be using Terraform to create the following:
+
+- VPC
+- Subnets
+- Internet Gateway
+- Route Table
+- Security Group
+- EC2 Instance
+- RDS Instance
+
+## Getting Started
+
+- Clone this repository and this repository: https://github.com/hvaandres/workshop2
+- If you are using "Workshop2" repository, you will need to change the "main.tf" file to your own AWS account. You will need to change the "aws_access_key" and "aws_secret_key" to your own AWS account. OR you will need to change the "variables.tf" file to your own AWS account. You will need to change the "aws_access_key" and "aws_secret_key" to your own AWS account.
 - After you run the terraform project, you will need to confirm the EC2 instance and RDS instance. 
 - You will need to collect the following information from your AWS resources:
     - EC2 Instance Public IP
@@ -93,16 +98,30 @@ This is what I teach in my DevOps course with Nucamp: https://nucamp.co?referral
 
 - Check that the image is in your ECR repository, and after this, you will be done with the project.
 
-# Site notes:
 
-- If you would like to create any more resources in AWS, you now will be able to do so. And you will be able to use the ECR repository to copy the docker image to your AWS resources. As an example, you will be able to run an EKS instance within Helm and use the ECR image to add your application to the EKS instance.
+## Application Structure (Kubernetes)
 
-# Go to the Terraform_aws_assignment repository
+- terraform: You should run this pproject first. This will create the AWS resources.
+- docker-compose.yml: Should have the AWS account connection information. Then, it should be ready for the container registry
+- Now, you will have to add the URL from your container registry to the "values.yaml" located in the "helm" folder. You will need to change the following line: "repository: [Container_registry_image]"
+- Login into your EKS Cluster and run the following command: "helm install [name] ." You will need to be inside of the "helm project" folder to ensure this command will work.
+- If everything above is working, you will be able to verify the pods and services by running the following commands:
+    - "kubectl get pods"
+    - "kubectl get services"
+- If the service is running as expected, you should be able to get an external IP address from the load balancer which will be the main source of the application.
+
+
+# Personal Notes
+
+This is what I teach in my DevOps course with Nucamp: https://nucamp.co?referral=YGVUVG. If you want to learn more about this course, you can [check it out here](https://nucamp.co?referral=YGVUVG). If you have more questions, you can always feel free to reach out to me and I will be happy to help you out.
+
+
+## Go to the "terraform" folder and run the following commands:
 
 - Destroy the resources by running the following command: "terraform destroy"
 - This will take a few minutes to destroy the resources.
 
-# Guides
+## Guides
 
 - These are the guides:
 [Run EKS on AWS](https://docs.aws.amazon.com/eks/latest/userguide/what-is-eks.html)
@@ -125,7 +144,7 @@ This is what I teach in my DevOps course with Nucamp: https://nucamp.co?referral
 [Learn more about AWS Elastic Beanstalk (EB)](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/Welcome.html)
 [Learn more about AWS Elastic Container Service (ECS)](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/Welcome.html)
 
-# Books
+## Books
 - These are the books:
 [Learn Terraform](https://www.terraformupandrunning.com/)
 [Learn AWS](https://www.amazon.com/Amazon-Web-Services-Step-Step/dp/1119138558)
