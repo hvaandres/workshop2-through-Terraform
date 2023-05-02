@@ -29,3 +29,4 @@ services:
       - web
 volumes:
   static_volume:
+# test
