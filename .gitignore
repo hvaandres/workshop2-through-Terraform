@@ -33,3 +33,7 @@ override.tf.json
 .terraformrc
 terraform.rc
 .terraform.lock.hcl
+terraform/EKS_Cluster/.terraform
+terraform/EKS_Cluster/vars.tf
+
+
