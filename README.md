@@ -1,4 +1,10 @@
-# Prerequisites
+# About:
+
+I'm actively guiding my students to extend their learning beyond the current curriculum. Within the framework of Nucamp Coding Bootcamp's workshop 2, the focus is on mastering the fundamentals of constructing a Basic Python Django application seamlessly integrated with a Postgresql database through AWS. While covering essential configurations with an EC2 instance, RDS setup, repository creation, and application containerization, we've been executing these steps manually.
+
+To empower my students with a deeper understanding and a more streamlined approach, I proactively introduced Terraform to automate the infrastructure-building process. This not only enhances their comprehension but also exposes them to additional concepts. Furthermore, I took the initiative to construct a Helm chart, offering a convenient deployment option to Amazon EKS (Elastic Kubernetes Service) should the need arise. This strategic move broadens the scope of their learning, preparing them for more advanced and efficient practices in the realm of cloud infrastructure and deployment.
+
+## Prerequisites:
 
 - AWS Account
 - AWS CLI
